@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PageToCheck index{% endblock %}
+
+{% block body %}
+    <h1>PageToCheck index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Url</th>
+                <th>Filter</th>
+                <th>Cron</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for page_to_check in page_to_checks %}
+            <tr>
+                <td>{{ page_to_check.id }}</td>
+                <td>{{ page_to_check.url }}</td>
+                <td>{{ page_to_check.filter }}</td>
+                <td>{{ page_to_check.cron }}</td>
+                <td>
+                    <a href="{{ path('page_to_check_show', {'id': page_to_check.id}) }}">show</a>
+                    <a href="{{ path('page_to_check_edit', {'id': page_to_check.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('page_to_check_new') }}">Create new</a>
+{% endblock %}

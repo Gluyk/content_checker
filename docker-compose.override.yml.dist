@@ -3,7 +3,7 @@ version: '3.3'
 services:
   db:
     ports:
-      - "3306:3306"
+      - "3307:3306"
   nginx:
     ports:
-      - "80:80"
+      - "8081:80"

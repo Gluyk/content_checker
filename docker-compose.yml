@@ -16,12 +16,23 @@ services:
   php:
     build:
       context: .
-      dockerfile: ./php/Dockerfile
+      dockerfile: ./php/php
     working_dir: /app
     restart: always
     volumes:
       - ./app:/app
-#      - ./cron_tasks/1min:/etc/periodic/1min/:ro
+    links:
+      - db
+
+  php_cron:
+    build:
+      context: .
+      dockerfile: ./php/php_cron
+    working_dir: /app
+    restart: always
+    volumes:
+      - ./app:/app
+      - ./php/cron_tasks/:/etc/periodic/:ro
     links:
       - db
 

@@ -1,0 +1,10 @@
+<div>
+    {% if results is defined %}
+        <h4>Results:</h4>
+        <ol>
+            {% for result in results %}
+                <li>{{ result }}</li>
+            {% endfor %}
+        </ol>
+    {% endif %}
+</div>

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PageToCheck{% endblock %}
+
+{% block body %}
+    <h1>PageToCheck</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ page_to_check.id }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ page_to_check.url }}</td>
+            </tr>
+            <tr>
+                <th>Filter</th>
+                <td>{{ page_to_check.filter }}</td>
+            </tr>
+            <tr>
+                <th>Cron</th>
+                <td>{{ page_to_check.cron }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('page_to_check_index') }}">back to list</a>
+
+    <a href="{{ path('page_to_check_edit', {'id': page_to_check.id}) }}">edit</a>
+
+    {{ include('page_to_check/_delete_form.html.twig') }}
+{% endblock %}

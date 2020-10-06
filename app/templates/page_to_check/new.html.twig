@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New PageToCheck{% endblock %}
+
+{% block body %}
+    <h1>Create new PageToCheck</h1>
+
+    {{ include('page_to_check/_form.html.twig') }}
+
+    {{ include('page_to_check/result.html.twig') }}
+
+    <a href="{{ path('page_to_check_index') }}">back to list</a>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit PageToCheck{% endblock %}
+
+{% block body %}
+    <h1>Edit PageToCheck</h1>
+
+    {{ include('page_to_check/_form.html.twig', {'button_label': 'Update'}) }}
+
+    {{ include('page_to_check/result.html.twig') }}
+
+    <a href="{{ path('page_to_check_index') }}">back to list</a>
+
+    {{ include('page_to_check/_delete_form.html.twig') }}
+{% endblock %}
